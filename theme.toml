@@ -1,4 +1,4 @@
-name = "hugo-simplecss"
+name = "SimpleCSS"
 license = "MIT"
 licenselink = "https://github.com/splch/hugo-simplecss/blob/master/LICENSE"
 description = "Use Simplecss with the bare-minimum Hugo theme to optimize readability and expressibility."
