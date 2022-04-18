@@ -1,0 +1,10 @@
+<header>
+    <nav>
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+        {{ end }}
+    </nav>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.author }}<h2>{{ . }}</h2>{{ end }}
+    {{ if (gt .Params.date 0) }}<i>{{ .Date.Format "2006/01/02" }}</i>{{ end }}
+</header>
