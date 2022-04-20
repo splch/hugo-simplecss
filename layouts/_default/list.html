@@ -1,8 +1,16 @@
 {{ define "main" }}
-<ul>
-    {{ range .Pages.ByPublishDate.Reverse }}
-    <li><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-    <br>
+<nav>
+    {{ with .Paginator.Prev }}
+    <a href="{{ .URL }}"> ← </a>
     {{ end }}
-</ul>
+    {{ with .Paginator.Next }}
+    <a href="{{ .URL }}"> → </a>
+    {{ end }}
+</nav>
+{{ range .Paginator.Pages }}
+<section>
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <blockquote>{{ .Summary }}</blockquote>
+</section>
+{{ end }}
 {{ end }}
