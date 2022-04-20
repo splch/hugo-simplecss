@@ -1,4 +1,11 @@
 {{ define "main" }}
+{{ range .Paginator.Pages }}
+<section>
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <small>{{- partial "date.html" . -}} | {{- partial "duration.html" . -}}</small>
+    <p>{{ .Summary }}</p>
+</section>
+{{ end }}
 <nav>
     {{ with .Paginator.Prev }}
     <a href="{{ .URL }}"> ← </a>
@@ -7,10 +14,4 @@
     <a href="{{ .URL }}"> → </a>
     {{ end }}
 </nav>
-{{ range .Paginator.Pages }}
-<section>
-    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    <blockquote>{{ .Summary }}</blockquote>
-</section>
-{{ end }}
 {{ end }}

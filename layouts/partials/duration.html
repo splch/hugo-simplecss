@@ -1,0 +1,9 @@
+{{ with math.Round (div .WordCount 200.0) }}
+<!-- TODO: fix equal to 1 bug -->
+{{ if eq . 1 }}
+<mark>{{ . }} minute</mark>
+{{ end }}
+{{ if gt . 1 }}
+<mark>{{ . }} minutes</mark>
+{{ end }}
+{{ end }}

@@ -3,6 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ .Title }} | {{ .Site.Title }}</title>
     <meta name="description" content="{{ .Site.Params.Description }}" />
+    <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . " , "}}{{ end }}" />
     <link rel="stylesheet" href='{{ "/css/simple.css/simple.min.css" | relURL }}' media="all"
         onload="this.media='all'; this.onload=null;" />
     {{- partial "head_custom.html" . -}}
