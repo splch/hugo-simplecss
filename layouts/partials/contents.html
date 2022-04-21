@@ -1,0 +1,8 @@
+{{ if ne .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}
+<aside>
+    <details>
+        <summary>Table of Contents</summary>
+        {{ replace ( replace .TableOfContents "<nav id=\"TableOfContents\">" "" ) "</nav>" "" | safeHTML}}
+    </details>
+</aside>
+{{ end }}
