@@ -1,8 +1,8 @@
 {{ if ne .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}
 <aside>
-    <details>
+    <details open>
         <summary>Table of Contents</summary>
-        {{ replace ( replace .TableOfContents "<nav id=\"TableOfContents\">" "" ) "</nav>" "" | safeHTML}}
+        {{ replace ( replace .TableOfContents "<nav id=\"TableOfContents\">" "" ) "</nav>" "" | safeHTML }}
     </details>
 </aside>
 {{ end }}
