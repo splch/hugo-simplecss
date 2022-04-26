@@ -1,4 +1,4 @@
 <footer>
     {{- partial "footer_custom.html" . -}}
-    <i>{{ .Site.Copyright }}</i>
+    {{ with .Site.Copyright }}<i>{{ . }}</i>{{ end }}
 </footer>
